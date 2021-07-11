@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title','Dasboard')
 @section('header','Dasboard')
 @section('content')
       <!-- Main Content -->

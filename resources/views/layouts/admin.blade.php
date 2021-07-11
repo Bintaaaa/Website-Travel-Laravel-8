@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Blank Page &mdash; Stisla</title>
+  <title>@yield('title') | {{ config('app.name') }}</title>
 
     @include('includes.admin.style')
 </head>
@@ -25,7 +25,7 @@
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>Blank Page</h1>
+            <h1>@yield('header')</h1>
           </div>
 
             {{-- content --}}

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TravelPackageController;
 use App\Http\Controllers\app\CheckoutController;
 use App\Http\Controllers\app\DetailController;
 use App\Http\Controllers\app\HomeController;
@@ -28,7 +29,14 @@ Route::get('/checkout/success', [CheckoutController::class, 'success'])
     ->name('checkout-success');
 //admin
 Route::prefix('admin')
+    ->namespace('Admin')
+    ->middleware('auth', 'admin')
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])
             ->name('dashboard');
+        Route::resource('travel-package', 'TravelPackageController');
+        Route::resource('gallery', 'GalleryController');
     });
+
+
+Auth::routes(['verify' => true]);
