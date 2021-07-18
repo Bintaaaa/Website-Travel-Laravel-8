@@ -14,7 +14,7 @@
                 <h4>Paket Travel</h4>
               </div>
               <div class="card-body">
-                10
+                {{ $travel_package }}
               </div>
             </div>
           </div>
@@ -29,7 +29,7 @@
                 <h4>Transaksi</h4>
               </div>
               <div class="card-body">
-                42
+                {{ $transaction }}
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@
                 <h4>Pending</h4>
               </div>
               <div class="card-body">
-                1,201
+                {{ $pending  }}
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@
                 <h4>Sukses</h4>
               </div>
               <div class="card-body">
-                47
+                {{ $success }}
               </div>
             </div>
           </div>

@@ -1,11 +1,8 @@
 @extends('layouts.admin')
-@section('title','Package Travel')
-@section('header','Package Travel')
+@section('title','Transaction Travel')
+@section('header','Transaction Travel')
 @section('content')
       <!-- Main Content -->
-      <a href="{{ route('travel-package.create') }}" class="btn btn-sm btn-primary shadow-sm">
-        <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Paket Travel
-      </a>
       <div class="row">
         <div class="card-body">
             <div class="table-responsive">
@@ -13,11 +10,11 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Title</th>
-                        <th>Location</th>
-                        <th>Type</th>
-                        <th>Departure Date</th>
-                        <th>Type</th>
+                        <th>Travel</th>
+                        <th>Nama</th>
+                        <th>Visa</th>
+                        <th>Total</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -25,16 +22,19 @@
                     @forelse($items as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td>{{ $item->title }}</td>
-                            <td>{{ $item->location }}</td>
-                            <td>{{ $item->type }}</td>
-                            <td>{{ $item->departure_date }}</td>
-                            <td>{{ $item->type }}</td>
+                            <td>{{ $item->travelPackage->title }}</td>
+                            <td>{{ $item->users->name }}</td>
+                            <td>${{ $item->additional_visa }}</td>
+                            <td>${{ $item->transaction_total }}</td>
+                            <td>{{ $item->trasaction_status }}</td>
                             <td>
-                                <a href="{{ route('travel-package.edit', $item->id) }}" class="btn btn-info">
+                                <a href="{{ route('transaction.show', $item->id) }}" class="btn btn-info">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="{{ route('transaction.edit', $item->id) }}" class="btn btn-info">
                                     <i class="fa fa-pencil-alt"></i>
                                 </a>
-                                <form action="{{ route('travel-package.destroy', $item->id) }}" method="post" class="d-inline">
+                                <form action="{{ route('transaction.destroy', $item->id) }}" method="post" class="d-inline">
                                     @csrf
                                     @method('delete')
                                     <button class="btn btn-danger">

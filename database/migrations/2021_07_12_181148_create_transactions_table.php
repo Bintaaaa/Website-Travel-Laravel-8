@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('users_id')->nullable();
             $table->integer('additional_visa');
             $table->integer('transaction_total');
-            $table->integer('trasaction_status'); //In-cart , pending, success, cancel, failed
+            $table->string('trasaction_status'); //In-cart , pending, success, cancel, failed
             $table->softDeletes();
             $table->timestamps();
         });

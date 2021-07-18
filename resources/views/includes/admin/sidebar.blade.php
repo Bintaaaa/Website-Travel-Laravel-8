@@ -18,6 +18,6 @@
           <li class="menu-header">Travel</li>
           <li class="active"><a class="nav-link" href="{{ route('travel-package.index') }}"><i class="fas fa-hotel"></i> <span>Paket Travel</span></a></li>
           <li class="active"><a class="nav-link" href="{{ route('gallery.index') }}"><i class="far fa-images"></i> <span>Galeri Travel</span></a></li>
-          <li class="active"><a class="nav-link" href="blank.html"><i class="fas fa-dollar-sign"></i> <span>Transaksi</span></a></li>
+          <li class="active"><a class="nav-link" href="{{ route('transaction.index') }}"><i class="fas fa-dollar-sign"></i> <span>Transaksi</span></a></li>
     </aside>
   </div>
